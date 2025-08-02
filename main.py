@@ -5,7 +5,7 @@ client = DragonCenterClient()
 print("System Info:")
 print(client.update_all())
 
-print("Switching to PERFORMANCE mode:")
+print("Switching to SUPER BATTERY")
 client.set_status(UserScenario.SUPER_BATTERY)
 
 print("New status:")
