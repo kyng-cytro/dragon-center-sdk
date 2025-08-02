@@ -33,7 +33,7 @@ print(client.get_status())
 
 CLI Tool
 ```bash
-python cli.py [mode] [--host <string>] [--port <number>] [--user-perf LEVEL] [--fan MODE]
+python cli.py [scenario] [--host <string>] [--port <number>] [--user-perf LEVEL] [--fan MODE]
 ```
 Examples:
 ```bash
@@ -47,9 +47,9 @@ python cli.py user_defined --user-perf turbo --fan cooler_boost
 python cli.py --help
 ```
 
-## User Scenario Modes
+## User Scenarios
 
-| Mode              | Value |
+| Scenario              | Value |
 |-------------------|-------|
 | EXTREME_PERFORMANCE | 1     |
 | BALANCED            | 2     |
@@ -57,7 +57,7 @@ python cli.py --help
 | SUPER_BATTERY       | 4     |
 | USER_DEFINED        | 5     |
 
-`Only USER_DEFINED requires user_perf, and optionally fan_mode.`
+`Only USER_DEFINED requires user_perf and fan_mode.`
 
 ## Performance Levels
 

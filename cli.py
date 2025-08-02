@@ -3,12 +3,12 @@ from DragonCenter.client import DragonCenterClient, FanMode, UserScenario, Perfo
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Switch MSI Dragon Center performance mode")
+    parser = argparse.ArgumentParser(description="Switch MSI Dragon Center user scenario")
     parser.add_argument(
-        "mode",
+        "scenario",
         type=str,
         choices=[m.name.lower() for m in UserScenario],
-        help="Performance mode: silent, balanced, performance, user_defined"
+        help="User scenario: silent, balanced, super_battery, extreme_performance, user_defined"
     )
     parser.add_argument(
         "--user-perf",
@@ -32,16 +32,16 @@ def main():
     args = parser.parse_args()
     client = DragonCenterClient(host=args.host, port=args.port)
 
-    mode_enum = UserScenario[args.mode.upper()]
+    scenario_enum = UserScenario[args.scenario.upper()]
 
-    if mode_enum == UserScenario.USER_DEFINED:
+    if scenario_enum == UserScenario.USER_DEFINED:
         if args.user_perf is None:
-            parser.error("user_defined mode requires --user-perf")
+            parser.error("user_defined scenario requires --user-perf")
         user_perf = PerformanceLevel[args.user_perf.upper()]
         fan_mode = FanMode[args.fan.upper()] if args.fan else None
-        result = client.set_status(mode_enum, user_perf=user_perf, fan_mode=fan_mode)
+        result = client.set_status(scenario_enum, user_perf=user_perf, fan_mode=fan_mode)
     else:
-        result = client.set_status(mode_enum)
+        result = client.set_status(scenario_enum)
 
     print("Response:")
     print(result)

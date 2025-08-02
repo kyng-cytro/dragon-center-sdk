@@ -48,12 +48,12 @@ class DragonCenterClient:
 
     def set_status(
         self,
-        mode: Union[int, UserScenario],
+        scenario: Union[int, UserScenario],
         *,
         user_perf: Optional[Union[int, PerformanceLevel]] = None,
         fan_mode: Optional[Union[int, FanMode]] = None
     ) -> Union[dict, str]:
-        index = int(mode)
+        index = int(scenario)
         if not (1 <= index <= 5):
             raise ValueError("Mode index must be between 1 and 5 (inclusive).")
 
