@@ -4,6 +4,8 @@ Python SDK + CLI for interacting with MSI Dragon Center's local socket interface
 
 This tool allows you to get system info, query current performance status, and switch user scenarios, including custom performance and fan configurations—just like MSI Dragon Center does internally.
 
+`Want to know why or how this exists?` [Check This Out](https://cylip-notes.cytro.com.ng/public/lgzqqv25m4k3m1h)
+
 ## Usage
 
 Python SDK
